@@ -1,37 +1,26 @@
-let invested = 0;
-let current = 0;
+let tradeCount = 0;
 
-function invest() {
-    let amount = parseFloat(document.getElementById("amountInput").value);
-    let phone = document.getElementById("phoneInput").value;
+document.getElementById('tradeBtn').addEventListener('click', function () {
+    const amountInput = document.getElementById('amount');
+    const totalDisplay = document.getElementById('total');
+    const withdrawBtn = document.getElementById('withdrawBtn');
 
-    if (!amount || !phone) {
-        alert("Please enter amount and phone number.");
+    const amount = parseInt(amountInput.value);
+    if (isNaN(amount) || amount <= 0) {
+        alert("Enter a valid amount");
         return;
     }
 
-    invested = amount;
-    current = amount;
+    tradeCount++;
+    const currentTotal = parseInt(totalDisplay.innerText);
+    totalDisplay.innerText = currentTotal + amount;
 
-    document.getElementById("investedAmount").innerText = invested;
-    document.getElementById("currentAmount").innerText = current;
-
-    document.getElementById("dashboard").style.display = "block";
-}
-
-function trade() {
-    current *= 2;
-    document.getElementById("currentAmount").innerText = current;
-
-    if (current >= invested * 3) {
-        document.getElementById("withdrawBtn").style.display = "inline-block";
+    if (tradeCount >= 3) {
+        withdrawBtn.disabled = false;
     }
-}
+});
 
-function withdraw() {
-    alert("You have withdrawn KES " + current + ". Thank you for using DoubleUp!");
-    invested = 0;
-    current = 0;
-    document.getElementById("dashboard").style.display = "none";
-    document.getElementById("withdrawBtn").style.display = "none";
-}
+document.getElementById('withdrawBtn').addEventListener('click', function () {
+    const messageBox = document.getElementById('message');
+    messageBox.innerText = "Kaa chini ufanye kazi, Papa Graham ni mnoma!";
+});
