@@ -1,0 +1,67 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    color: gold;
+}
+
+button {
+    background-color: gold;
+    color: black;
+    padding: 10px;
+    border: none;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+nav {
+    background-color: #222;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: gold;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.ticker {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ticker ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: scroll-vertical 10s linear infinite;
+}
+
+@keyframes scroll-vertical {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+.ticker ul:nth-child(2) {
+    margin-top: -100%;
+}

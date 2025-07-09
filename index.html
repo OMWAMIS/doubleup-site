@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DoubleUp | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="how.html">How It Works</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <h1>🔥 DoubleUp</h1>
+    <p>Grow your money now. Instant 3X simulation.</p>
+
+    <h3>💸 Recent Investors:</h3>
+    <div class="ticker">
+        <ul>
+            <li>Brian – KES 500 → 1500</li>
+            <li>Amina – KES 1000 → 3000</li>
+            <li>Samuel – KES 250 → 750</li>
+            <li>Janet – KES 750 → 2250</li>
+            <li>George – KES 1200 → 3600</li>
+            <li>Mercy – KES 300 → 900</li>
+        </ul>
+        <ul>
+            <li>Brian – KES 500 → 1500</li>
+            <li>Amina – KES 1000 → 3000</li>
+            <li>Samuel – KES 250 → 750</li>
+            <li>Janet – KES 750 → 2250</li>
+            <li>George – KES 1200 → 3600</li>
+            <li>Mercy – KES 300 → 900</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <h2>📲 Invest Now</h2>
+    <label>Amount (KES):</label>
+    <input type="number" id="amountInput"><br>
+    <label>Phone Number:</label>
+    <input type="text" id="phoneInput"><br><br>
+    <button onclick="invest()">💳 Invest</button>
+
+    <div id="dashboard" style="display:none;">
+        <h2>💰 Dashboard</h2>
+        <p>Invested: KES <span id="investedAmount">0</span></p>
+        <p>Current: KES <span id="currentAmount">0</span></p>
+
+        <button onclick="trade()">📈 Trade</button>
+        <button onclick="withdraw()" id="withdrawBtn" style="display:none;">💵 Withdraw</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
